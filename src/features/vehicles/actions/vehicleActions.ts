@@ -15,8 +15,8 @@ export async function createVehicle(data: any) {
 
     const val = vehicleSchema.safeParse(data)
     if (!val.success) {
-      console.error('Validation Error', val.error.errors)
-      return { success: false, error: 'Validation failed', errors: val.error.errors }
+      console.error('Validation Error', val.error.flatten().fieldErrors)
+      return { success: false, error: 'Validation failed', errors: val.error.flatten().fieldErrors }
     }
 
     // Checking if the plate already exists locally, but the unique constraint will handle it too
