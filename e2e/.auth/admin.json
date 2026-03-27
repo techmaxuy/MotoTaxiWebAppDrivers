@@ -1,0 +1,65 @@
+{
+  "cookies": [
+    {
+      "name": "NEXT_LOCALE",
+      "value": "en",
+      "domain": "localhost",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "user-country",
+      "value": "US",
+      "domain": "localhost",
+      "path": "/",
+      "expires": 1774736096.154428,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "authjs.csrf-token",
+      "value": "10da1b1d8c57560ab79cb417762825c4ca13ee40d409d6acfac54429586d06d0%7Cde1bd7fb9aa2daa2ee2acc2175357f131db56b84c88ce251276658354da69835",
+      "domain": "localhost",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "authjs.callback-url",
+      "value": "http%3A%2F%2Flocalhost%3A3000%2Fen%3Fsuccess%3Dlogin",
+      "domain": "localhost",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "auth_intent",
+      "value": "login",
+      "domain": "localhost",
+      "path": "/",
+      "expires": 1774649996.119569,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "authjs.session-token",
+      "value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2Q0JDLUhTNTEyIiwia2lkIjoiOEFfNE9uc2tUYUU3ZDZuVFdfd3lxdmNDWTlkWTdQakJ5QWJMbENZcGsxRkIxS19XeHFkcmtxdGtwTWlWNkE0ZjI3Sl9Za2VpdHRJOUlfRmNHaTB5NWcifQ..-v6T1mSDxt9vlOoZtVsxuw.64hP1hz1u4nhSyIltGLqaSvW2I_1BN_I1nOBfr2QKpz3RqGgor9PpPtKf2TVIiWxmkY1OysNk6pVFOZAA4XwfKinpYTDoHXJwkD9nocx_dBFm9jYbcqAciMY27HnEvJnU0biAb-Oasg1qjRWOdP1oJ0mJmy3KmWFwRJI3bq0iNkMMQJW9KwFvaaIT2hsP4cKTJl5XZfKjqM2oGu-VakXLxcdUB0XOOItfMzsBs6YyrkXuAXeufNzdown9g-yuOvLxIRwHWkp-VOJRf0W4L_4cA.nsusiH7OhYGMfYertORxW3qBf0eMssgnnQfb8n7Rnp0",
+      "domain": "localhost",
+      "path": "/",
+      "expires": 1777241696.154525,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": []
+}
