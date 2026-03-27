@@ -530,5 +530,36 @@
     "errors": {
       "uploadFailed": "Failed to upload receipt. Please try again."
     }
+  },
+  "Vehicles": {
+    "title": "My Vehicles",
+    "description": "Manage the vehicles you work with",
+    "addVehicle": "Register Vehicle",
+    "noVehicles": "You have no vehicles registered",
+    "brand": "Brand",
+    "model": "Model",
+    "year": "Year",
+    "licensePlate": "License Plate",
+    "color": "Color",
+    "photos": "Vehicle Photos",
+    "front": "Front",
+    "back": "Back",
+    "right": "Right Side",
+    "left": "Left Side",
+    "documents": "Documents",
+    "propertyCard": "Property Card",
+    "drivingLicense": "Driving License",
+    "contract": "Liability Contract",
+    "contractText": "I accept that any liability for accidents, damages, fines, or mishaps during the service falls entirely on me. The web application works exclusively as a contact intermediary and is exempt from any civil or criminal lawsuit or claim.",
+    "save": "Register Vehicle",
+    "saving": "Registering...",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "confirmDelete": "Are you sure you want to delete this vehicle?",
+    "status": "Status",
+    "statusPENDING": "Pending Approval",
+    "statusAPPROVED": "Approved",
+    "statusREJECTED": "Rejected",
+    "uploading": "Uploading..."
   }
 }

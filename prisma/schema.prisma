@@ -38,10 +38,12 @@ model User {
   subscription  UserSubscription?
   tokenUsage    TokenUsage[]
   payments      Payment[]
+  vehicles      Vehicle[]
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
 
 model Account {
   userId            String
@@ -187,4 +189,37 @@ model Payment {
 
   user            User           @relation(fields: [userId], references: [id], onDelete: Cascade)
   gateway         PaymentGateway @relation(fields: [gatewayId], references: [id])
+}
+
+// Modelo de Vehículos para MotoTaxi
+model Vehicle {
+  id                  String    @id @default(cuid())
+  userId              String
+  brand               String
+  model               String
+  year                Int
+  licensePlate        String    @unique
+  color               String?
+  
+  // Fotos del vehículo
+  frontPhoto          String
+  backPhoto           String
+  rightSidePhoto      String
+  leftSidePhoto       String
+  
+  // Documentos requeridos
+  propertyCardPhoto   String
+  drivingLicensePhoto String
+  
+  // Contrato legal aceptado (Responsabilidad civil)
+  contractAccepted    Boolean   @default(false)
+  
+  // Estados y validaciones
+  isActive            Boolean   @default(true)
+  status              String    @default("PENDING") // PENDING, APPROVED, REJECTED
+  
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+
+  user                User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

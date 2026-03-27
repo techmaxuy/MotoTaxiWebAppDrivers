@@ -3,6 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { UserMenu } from '@/core/shared/components/UserMenu';
 import { getSettings } from '@/core/admin/actions/settings';
 import Image from 'next/image';
+import { Link } from '@/i18n/routing';
 
 interface HomePageProps {
   params: Promise<{ locale: string }>
@@ -152,8 +153,35 @@ export default async function Home({ params, searchParams }: HomePageProps) {
                     ? '¡Todo está listo para comenzar!' 
                     : 'Everything is ready to get started!'}
                 </p>
+
+                {/* Dashboard Quick Actions */}
+                <div className="mt-8 pt-8 border-t border-gray-200 dark:border-zinc-800 flex justify-center">
+                  <Link 
+                    href="/vehicles"
+                    className="group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-white dark:bg-zinc-900 border-2 border-green-500 rounded-2xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all overflow-hidden"
+                  >
+                    <div className="absolute inset-0 bg-green-500/10 dark:bg-green-500/5 translate-y-[100%] group-hover:translate-y-[0%] transition-transform duration-300" />
+                    
+                    <div className="p-3 bg-green-100 dark:bg-green-900/40 text-green-600 dark:text-green-400 rounded-xl">
+                      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                      </svg>
+                    </div>
+                    
+                    <div className="text-left">
+                      <p className="text-sm font-medium text-green-600 dark:text-green-400 uppercase tracking-wider">
+                        {locale === 'es' ? 'Acceso Rápido' : 'Quick Access'}
+                      </p>
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
+                        {locale === 'es' ? 'Administrar mis Vehículos' : 'Manage my Vehicles'}
+                      </h3>
+                    </div>
+                  </Link>
+                </div>
+
               </div>
             )}
+
           </div>
         </div>
       </main>

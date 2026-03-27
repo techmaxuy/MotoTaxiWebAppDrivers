@@ -29,3 +29,4 @@ Este archivo está diseñado para mantener el contexto persistente del proyecto 
 
 ## 4. Estado Actual y Registro de Hitos
 - **2026-03-27:** Creación del archivo de contexto base extrayendo toda la información vital del README. Integración de la política de actualización de contexto en las reglas del sistema para asegurar la continuidad entre hilos de conversación.
+- **2026-03-27 (Vehículos):** Se implementó exitosamente el módulo de Gestión de Vehículos para MotoTaxi dentro de `src/features/vehicles`. Esto incluyó agregar el modelo `Vehicle` a Prisma (vinculado a `User`), crear los formularios con capacidad para subir múltiples fotos a Azure (frente, trasero, laterales, libreta de propiedad y conducir), añadir validaciones con contrato legal (`Zod`) y mostrar en el Dashboard (`src/app/[locale]/page.tsx`) el acceso rápido independiente del perfil del core.

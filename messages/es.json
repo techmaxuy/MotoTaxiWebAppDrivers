@@ -538,5 +538,36 @@
     "errors": {
       "uploadFailed": "Error al subir el comprobante. Por favor intenta de nuevo."
     }
+  },
+  "Vehicles": {
+    "title": "Mis Vehículos",
+    "description": "Gestiona los vehículos con los que trabajas",
+    "addVehicle": "Registrar Vehículo",
+    "noVehicles": "No tienes vehículos registrados",
+    "brand": "Marca",
+    "model": "Modelo",
+    "year": "Año",
+    "licensePlate": "Matrícula/Patente",
+    "color": "Color",
+    "photos": "Fotos del Vehículo",
+    "front": "Frente",
+    "back": "Parte Trasera",
+    "right": "Lateral Derecho",
+    "left": "Lateral Izquierdo",
+    "documents": "Documentos",
+    "propertyCard": "Libreta de Propiedad",
+    "drivingLicense": "Libreta de Conducir",
+    "contract": "Contrato de Responsabilidad",
+    "contractText": "Acepto que cualquier responsabilidad por accidentes, daños, multas o percances durante el servicio recae totalmente sobre mí. La aplicación web funciona exclusivamente como intermediario de contacto y se desliga de cualquier demanda o reclamo civil o penal.",
+    "save": "Registrar Vehículo",
+    "saving": "Registrando...",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "confirmDelete": "¿Estás seguro de que quieres eliminar este vehículo?",
+    "status": "Estado",
+    "statusPENDING": "Pendiente de Aprobación",
+    "statusAPPROVED": "Aprobado",
+    "statusREJECTED": "Rechazado",
+    "uploading": "Subiendo..."
   }
 }
