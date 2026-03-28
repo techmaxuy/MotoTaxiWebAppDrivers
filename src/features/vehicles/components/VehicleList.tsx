@@ -4,14 +4,15 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { Link, useRouter } from '@/i18n/routing'
 import { Plus, Trash2, Edit, AlertCircle, Loader2 } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import { deleteVehicle } from '../actions/vehicleActions'
 
 interface VehicleListProps {
   vehicles: any[]
-  t: any
 }
 
-export function VehicleList({ vehicles, t }: VehicleListProps) {
+export function VehicleList({ vehicles }: VehicleListProps) {
+  const t = useTranslations('Vehicles')
   const router = useRouter()
   const [deletingId, setDeletingId] = useState<string | null>(null)
 

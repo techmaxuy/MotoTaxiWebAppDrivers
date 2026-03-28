@@ -27,7 +27,7 @@ export default async function NewVehiclePage() {
         </p>
       </div>
 
-      <VehicleForm t={t} />
+      <VehicleForm />
     </div>
   )
 }

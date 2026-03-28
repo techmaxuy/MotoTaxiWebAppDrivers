@@ -5,8 +5,10 @@ import { useRouter } from '@/i18n/routing'
 import { VehicleImageUpload } from './VehicleImageUpload'
 import { createVehicle } from '../actions/vehicleActions'
 import { Loader2, AlertCircle } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
-export function VehicleForm({ t }: { t: any }) {
+export function VehicleForm() {
+  const t = useTranslations('Vehicles')
   const router = useRouter()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
