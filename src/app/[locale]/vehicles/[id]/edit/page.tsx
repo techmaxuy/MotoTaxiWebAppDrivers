@@ -6,10 +6,11 @@ import { getVehicle } from '@/features/vehicles/actions/vehicleActions'
 import { notFound } from 'next/navigation'
 
 export default async function EditVehiclePage({
-  params: { id }
+  params
 }: {
-  params: { id: string }
+  params: Promise<{ id: string, locale: string }>
 }) {
+  const { id } = await params
   const t = await getTranslations('Vehicles')
   
   const response = await getVehicle(id)
