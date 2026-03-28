@@ -18,7 +18,6 @@ type AdminVehicleInfo = {
   rightSidePhoto: string
   leftSidePhoto: string
   propertyCardPhoto: string
-  drivingLicensePhoto: string
   status: string
   adminMessage: string | null
   createdAt: Date
@@ -204,10 +203,6 @@ export function AdminVehicleList({ vehicles }: { vehicles: AdminVehicleInfo[] })
                   <div>
                     <label className="text-xs text-gray-500 uppercase font-bold mb-1 block">Libreta de Propiedad</label>
                     <img src={selectedVehicle.propertyCardPhoto} alt="Propiedad" className="w-full h-40 object-contain bg-gray-100 dark:bg-zinc-800 rounded-lg border border-gray-300" />
-                  </div>
-                  <div>
-                    <label className="text-xs text-gray-500 uppercase font-bold mb-1 block">Licencia de Conducir</label>
-                    <img src={selectedVehicle.drivingLicensePhoto} alt="Licencia" className="w-full h-40 object-contain bg-gray-100 dark:bg-zinc-800 rounded-lg border border-gray-300" />
                   </div>
                 </div>
               </div>

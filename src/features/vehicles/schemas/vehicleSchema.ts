@@ -11,7 +11,6 @@ export const vehicleSchema = z.object({
   rightSidePhoto: z.string().url('Debe proveer una foto lateral derecha válida'),
   leftSidePhoto: z.string().url('Debe proveer una foto lateral izquierda válida'),
   propertyCardPhoto: z.string().url('Debe proveer una foto de la libreta de propiedad'),
-  drivingLicensePhoto: z.string().url('Debe proveer una foto de la libreta de conducir'),
   contractAccepted: z.boolean().refine(val => val === true, {
     message: 'Debe aceptar el contrato de responsabilidad para poder registrar el vehículo'
   })

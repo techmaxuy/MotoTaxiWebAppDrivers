@@ -173,7 +173,7 @@ export default async function Home({ params, searchParams }: HomePageProps) {
                         {locale === 'es' ? 'Acceso Rápido' : 'Quick Access'}
                       </p>
                       <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
-                        {locale === 'es' ? 'Administrar mis Vehículos' : 'Manage my Vehicles'}
+                        {locale === 'es' ? 'Administrar vehículos y documentación' : 'Manage vehicles and documentation'}
                       </h3>
                     </div>
                   </Link>

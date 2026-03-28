@@ -39,6 +39,7 @@ model User {
   tokenUsage    TokenUsage[]
   payments      Payment[]
   vehicles      Vehicle[]
+  driverDocument DriverDocument?
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -209,7 +210,6 @@ model Vehicle {
   
   // Documentos requeridos
   propertyCardPhoto   String
-  drivingLicensePhoto String
   
   // Contrato legal aceptado (Responsabilidad civil)
   contractAccepted    Boolean   @default(false)
@@ -224,3 +224,38 @@ model Vehicle {
 
   user                User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
+
+// Modelo de Documentación de Chofer
+model DriverDocument {
+  id                    String    @id @default(cuid())
+  userId                String    @unique
+  
+  // Identidad
+  idCardNumber          String    @unique
+  idCardFront           String
+  idCardBack            String
+  dateOfBirth           String
+  placeOfBirth          String
+  
+  // Residencia
+  placeOfResidence      String
+  address               String
+  proofOfAddress        String
+  
+  // Libreta de Conducir
+  drivingLicenseNumber  String    @unique
+  drivingLicenseExpires String
+  drivingLicenseFront   String
+  drivingLicenseBack    String
+  
+  // Validaciones
+  isActive              Boolean   @default(true)
+  status                String    @default("PENDING") // PENDING, APPROVED, REJECTED
+  adminMessage          String?   @db.Text
+  
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+

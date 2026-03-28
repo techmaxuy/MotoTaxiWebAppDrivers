@@ -24,7 +24,6 @@ export function VehicleForm({ initialData }: { initialData?: any }) {
     rightSidePhoto: initialData?.rightSidePhoto || '',
     leftSidePhoto: initialData?.leftSidePhoto || '',
     propertyCardPhoto: initialData?.propertyCardPhoto || '',
-    drivingLicensePhoto: initialData?.drivingLicensePhoto || '',
     contractAccepted: initialData?.contractAccepted || false,
   })
 
@@ -42,7 +41,7 @@ export function VehicleForm({ initialData }: { initialData?: any }) {
       return
     }
 
-    if (!formData.propertyCardPhoto || !formData.drivingLicensePhoto) {
+    if (!formData.propertyCardPhoto) {
       setError(t('validation_allDocs'))
       setIsSubmitting(false)
       return
@@ -186,13 +185,6 @@ export function VehicleForm({ initialData }: { initialData?: any }) {
             value={formData.propertyCardPhoto} 
             onChange={(url) => setFormData({...formData, propertyCardPhoto: url})} 
             onDelete={() => setFormData({...formData, propertyCardPhoto: ''})} 
-          />
-          <VehicleImageUpload 
-            label={t('drivingLicense')} 
-            translations={(key: string) => t(key)} 
-            value={formData.drivingLicensePhoto} 
-            onChange={(url) => setFormData({...formData, drivingLicensePhoto: url})} 
-            onDelete={() => setFormData({...formData, drivingLicensePhoto: ''})} 
           />
         </div>
       </div>

@@ -41,7 +41,6 @@ export async function createVehicle(data: any) {
         rightSidePhoto: val.data.rightSidePhoto,
         leftSidePhoto: val.data.leftSidePhoto,
         propertyCardPhoto: val.data.propertyCardPhoto,
-        drivingLicensePhoto: val.data.drivingLicensePhoto,
         contractAccepted: val.data.contractAccepted,
         isActive: true, // Auto set as active right now for MVP, can be adjusted
         status: 'PENDING'
@@ -176,8 +175,7 @@ export async function updateVehicle(id: string, data: any) {
       existingVehicle.backPhoto !== val.data.backPhoto ||
       existingVehicle.rightSidePhoto !== val.data.rightSidePhoto ||
       existingVehicle.leftSidePhoto !== val.data.leftSidePhoto ||
-      existingVehicle.propertyCardPhoto !== val.data.propertyCardPhoto ||
-      existingVehicle.drivingLicensePhoto !== val.data.drivingLicensePhoto;
+      existingVehicle.propertyCardPhoto !== val.data.propertyCardPhoto;
 
     const newStatus = hasCriticalChanges ? 'PENDING' : existingVehicle.status;
 
@@ -194,7 +192,6 @@ export async function updateVehicle(id: string, data: any) {
         rightSidePhoto: val.data.rightSidePhoto,
         leftSidePhoto: val.data.leftSidePhoto,
         propertyCardPhoto: val.data.propertyCardPhoto,
-        drivingLicensePhoto: val.data.drivingLicensePhoto,
         contractAccepted: val.data.contractAccepted,
         status: newStatus
       }
