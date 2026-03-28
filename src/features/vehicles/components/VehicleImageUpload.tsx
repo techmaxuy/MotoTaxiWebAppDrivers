@@ -21,12 +21,12 @@ export function VehicleImageUpload({ label, value, onChange, onDelete, disabled,
     if (!file) return
 
     if (!file.type.startsWith('image/')) {
-      setError('Solo imágenes permitidas')
+      setError(translations('upload_onlyImages'))
       return
     }
 
     if (file.size > 5 * 1024 * 1024) {
-      setError('Máximo 5MB')
+      setError(translations('upload_maxSize5MB'))
       return
     }
 
@@ -51,7 +51,7 @@ export function VehicleImageUpload({ label, value, onChange, onDelete, disabled,
       onChange(data.imageUrl)
     } catch (err) {
       console.error(err)
-      setError('Error al subir')
+      setError(translations('upload_error'))
     } finally {
       setIsUploading(false)
     }

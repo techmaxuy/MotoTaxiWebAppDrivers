@@ -4,8 +4,8 @@ import { getMyVehicles } from '@/features/vehicles/actions/vehicleActions'
 
 import { Link } from '@/i18n/routing'
 import { ArrowLeft } from 'lucide-react'
-
 export default async function VehiclesPage() {
+  const t = await getTranslations('Vehicles')
   const { data: vehicles } = await getMyVehicles()
 
   return (
@@ -16,7 +16,7 @@ export default async function VehiclesPage() {
           className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-gray-900 dark:hover:text-gray-300 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          Volver al Dashboard
+          {t('backToDashboard')}
         </Link>
       </div>
       <VehicleList vehicles={vehicles || []} />

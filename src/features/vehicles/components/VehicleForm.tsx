@@ -3,30 +3,32 @@
 import { useState } from 'react'
 import { useRouter } from '@/i18n/routing'
 import { VehicleImageUpload } from './VehicleImageUpload'
-import { createVehicle } from '../actions/vehicleActions'
+import { createVehicle, updateVehicle } from '../actions/vehicleActions'
 import { Loader2, AlertCircle } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 
-export function VehicleForm() {
+export function VehicleForm({ initialData }: { initialData?: any }) {
   const t = useTranslations('Vehicles')
   const router = useRouter()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   
   const [formData, setFormData] = useState({
-    brand: '',
-    model: '',
-    year: new Date().getFullYear(),
-    licensePlate: '',
-    color: '',
-    frontPhoto: '',
-    backPhoto: '',
-    rightSidePhoto: '',
-    leftSidePhoto: '',
-    propertyCardPhoto: '',
-    drivingLicensePhoto: '',
-    contractAccepted: false,
+    brand: initialData?.brand || '',
+    model: initialData?.model || '',
+    year: initialData?.year || new Date().getFullYear(),
+    licensePlate: initialData?.licensePlate || '',
+    color: initialData?.color || '',
+    frontPhoto: initialData?.frontPhoto || '',
+    backPhoto: initialData?.backPhoto || '',
+    rightSidePhoto: initialData?.rightSidePhoto || '',
+    leftSidePhoto: initialData?.leftSidePhoto || '',
+    propertyCardPhoto: initialData?.propertyCardPhoto || '',
+    drivingLicensePhoto: initialData?.drivingLicensePhoto || '',
+    contractAccepted: initialData?.contractAccepted || false,
   })
+
+  const isEditing = !!initialData?.id
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -35,35 +37,37 @@ export function VehicleForm() {
 
     // Validaciones basicas
     if (!formData.frontPhoto || !formData.backPhoto || !formData.rightSidePhoto || !formData.leftSidePhoto) {
-      setError('Debes subir las 4 fotos del vehículo')
+      setError(t('validation_allPhotos'))
       setIsSubmitting(false)
       return
     }
 
     if (!formData.propertyCardPhoto || !formData.drivingLicensePhoto) {
-      setError('Debes subir los documentos requeridos')
+      setError(t('validation_allDocs'))
       setIsSubmitting(false)
       return
     }
 
     if (!formData.contractAccepted) {
-      setError('Debes aceptar el contrato de responsabilidad')
+      setError(t('validation_contract'))
       setIsSubmitting(false)
       return
     }
 
     try {
-      const result = await createVehicle(formData)
+      const result = isEditing 
+        ? await updateVehicle(initialData.id, formData)
+        : await createVehicle(formData)
       
       if (!result.success) {
-        setError(result.error || 'Error al guardar el vehículo')
+        setError(result.error || t('errorSaving'))
         return
       }
 
       router.push('/vehicles')
       
     } catch (err) {
-      setError('Ocurrió un error inesperado')
+      setError(t('unexpectedError'))
     } finally {
       setIsSubmitting(false)
     }
@@ -80,7 +84,7 @@ export function VehicleForm() {
 
       {/* Datos Básicos */}
       <div className="space-y-4">
-        <h3 className="text-xl font-semibold border-b border-gray-200 dark:border-zinc-800 pb-2">Información Básica</h3>
+        <h3 className="text-xl font-semibold border-b border-gray-200 dark:border-zinc-800 pb-2">{t('basicInfo')}</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="block text-sm font-medium mb-1">{t('brand')}</label>
@@ -210,7 +214,7 @@ export function VehicleForm() {
             onChange={(e) => setFormData({...formData, contractAccepted: e.target.checked})}
             className="w-5 h-5 text-blue-600 mt-0.5 rounded border-gray-300 focus:ring-blue-500"
           />
-          <span className="text-sm font-medium">He leído y acepto los términos de responsabilidad</span>
+          <span className="text-sm font-medium">{t('contractTerms')}</span>
         </label>
       </div>
 
@@ -230,7 +234,7 @@ export function VehicleForm() {
           className="px-6 py-2.5 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors flex items-center gap-2 disabled:opacity-50"
         >
           {isSubmitting && <Loader2 className="w-4 h-4 animate-spin" />}
-          {isSubmitting ? t('saving') : t('save')}
+          {isSubmitting ? (isEditing ? t('editing') : t('saving')) : (isEditing ? t('saveChanges') : t('save'))}
         </button>
       </div>
     </form>

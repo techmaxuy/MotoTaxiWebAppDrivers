@@ -38,7 +38,7 @@ export function VehicleList({ vehicles }: VehicleListProps) {
         </div>
         <h3 className="text-xl font-semibold mb-2">{t('noVehicles')}</h3>
         <p className="text-gray-500 max-w-sm mb-6">
-          Comienza registrando tu primer vehículo para poder utilizar la plataforma.
+          {t('emptyVehiclesPrompt')}
         </p>
         <Link 
           href="/vehicles/new"
@@ -110,6 +110,13 @@ export function VehicleList({ vehicles }: VehicleListProps) {
 
               {/* Botonera Oculta (Aparece en hover) */}
               <div className="absolute opacity-0 group-hover:opacity-100 bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-opacity flex justify-end gap-2 text-white">
+                <Link
+                  href={`/vehicles/${vehicle.id}/edit`}
+                  className="p-2 bg-blue-500 hover:bg-blue-600 rounded-full transition-colors inline-flex"
+                  title={t('editVehicle')}
+                >
+                  <Edit className="w-4 h-4" />
+                </Link>
                 <button 
                   onClick={() => handleDelete(vehicle.id)}
                   disabled={deletingId === vehicle.id}

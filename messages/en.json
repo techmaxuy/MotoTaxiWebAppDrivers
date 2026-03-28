@@ -560,6 +560,23 @@
     "statusPENDING": "Pending Approval",
     "statusAPPROVED": "Approved",
     "statusREJECTED": "Rejected",
-    "uploading": "Uploading..."
+    "uploading": "Uploading...",
+    "backToDashboard": "Back to Dashboard",
+    "backToVehicles": "Back to My Vehicles",
+    "basicInfo": "Basic Information",
+    "fillDataNotice": "Fill in the details and upload the required photos to register your motorcycle on the platform.",
+    "contractTerms": "I have read and accept the terms of liability",
+    "editVehicle": "Edit Vehicle",
+    "saveChanges": "Save Changes",
+    "editing": "Saving...",
+    "errorSaving": "Failed to save the vehicle",
+    "unexpectedError": "An unexpected error occurred",
+    "validation_allPhotos": "You must upload all 4 vehicle photos",
+    "validation_allDocs": "You must upload the required documents",
+    "validation_contract": "You must accept the liability contract",
+    "upload_onlyImages": "Only images allowed",
+    "upload_maxSize5MB": "Max size 5MB",
+    "upload_error": "Upload failed",
+    "emptyVehiclesPrompt": "Start by registering your first vehicle to use the platform."
   }
 }

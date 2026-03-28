@@ -568,6 +568,23 @@
     "statusPENDING": "Pendiente de Aprobación",
     "statusAPPROVED": "Aprobado",
     "statusREJECTED": "Rechazado",
-    "uploading": "Subiendo..."
+    "uploading": "Subiendo...",
+    "backToDashboard": "Volver al Dashboard",
+    "backToVehicles": "Volver a Mis Vehículos",
+    "basicInfo": "Información Básica",
+    "fillDataNotice": "Completa los datos y sube las fotos requeridas para registrar tu moto en la plataforma.",
+    "contractTerms": "He leído y acepto los términos de responsabilidad",
+    "editVehicle": "Editar Vehículo",
+    "saveChanges": "Guardar Cambios",
+    "editing": "Editando...",
+    "errorSaving": "Error al guardar el vehículo",
+    "unexpectedError": "Ocurrió un error inesperado",
+    "validation_allPhotos": "Debes subir las 4 fotos del vehículo",
+    "validation_allDocs": "Debes subir los documentos requeridos",
+    "validation_contract": "Debes aceptar el contrato de responsabilidad",
+    "upload_onlyImages": "Solo imágenes permitidas",
+    "upload_maxSize5MB": "Máximo 5MB",
+    "upload_error": "Error al subir",
+    "emptyVehiclesPrompt": "Comienza registrando tu primer vehículo para poder utilizar la plataforma."
   }
 }
