@@ -108,6 +108,15 @@ export function VehicleList({ vehicles }: VehicleListProps) {
                 </div>
               </div>
 
+              {vehicle.status === 'REJECTED' && vehicle.adminMessage && (
+                <div className="mb-4 p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg">
+                  <div className="flex gap-2 items-start text-red-600 dark:text-red-400">
+                    <AlertCircle className="w-4 h-4 mt-0.5 shrink-0" />
+                    <p className="text-sm font-medium">{vehicle.adminMessage}</p>
+                  </div>
+                </div>
+              )}
+
               {/* Botonera Oculta (Aparece en hover) */}
               <div className="absolute opacity-0 group-hover:opacity-100 bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-opacity flex justify-end gap-2 text-white">
                 <Link

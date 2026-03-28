@@ -217,6 +217,7 @@ model Vehicle {
   // Estados y validaciones
   isActive            Boolean   @default(true)
   status              String    @default("PENDING") // PENDING, APPROVED, REJECTED
+  adminMessage        String?   @db.Text // Mensaje de rechazo del admin
   
   createdAt           DateTime  @default(now())
   updatedAt           DateTime  @updatedAt

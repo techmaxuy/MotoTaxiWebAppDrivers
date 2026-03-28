@@ -139,7 +139,7 @@ export default async function AdminPage({ params }: AdminPageProps) {
         </div>
 
         {/* Quick Actions */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
           <Link
             href={`/${locale}/admin/users`}
             className="block p-6 bg-white dark:bg-zinc-900 rounded-lg shadow border border-gray-200 dark:border-zinc-800 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
@@ -161,6 +161,18 @@ export default async function AdminPage({ params }: AdminPageProps) {
             </h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
               {t('systemSettingsDescription')}
+            </p>
+          </Link>
+
+          <Link
+            href={`/${locale}/admin/vehicles`}
+            className="block p-6 bg-white dark:bg-zinc-900 rounded-lg shadow border border-gray-200 dark:border-zinc-800 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
+          >
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+              {t('manageVehicles')}
+            </h3>
+            <p className="text-sm text-gray-600 dark:text-gray-400">
+              {t('manageVehiclesDescription')}
             </p>
           </Link>
         </div>

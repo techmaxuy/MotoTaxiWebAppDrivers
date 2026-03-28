@@ -193,6 +193,8 @@
     "manageUsers": "Manage Users",
     "manageUsersDescription": "View, edit, and manage all user accounts",
     "systemSettings": "System Settings",
+    "manageVehicles": "Vehicle Audit",
+    "manageVehiclesDescription": "Review, approve or reject vehicles registered by drivers",
     "comingSoon": "Coming soon",
     "recentUsers": "Recent Users",
     "user": "User",
@@ -577,6 +579,20 @@
     "upload_onlyImages": "Only images allowed",
     "upload_maxSize5MB": "Max size 5MB",
     "upload_error": "Upload failed",
-    "emptyVehiclesPrompt": "Start by registering your first vehicle to use the platform."
+    "emptyVehiclesPrompt": "Start by registering your first vehicle to use the platform.",
+    "all": "All",
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "searchPlaceholder": "Search by user or email...",
+    "reviewButton": "Review",
+    "reviewModalTitle": "Vehicle Audit",
+    "rejectPlaceholder": "Type the rejection reason here so the driver can fix it...",
+    "approveConfirm": "Approve",
+    "rejectConfirm": "Reject with Message",
+    "reasonRequired": "You must specify a reason for rejection.",
+    "close": "Close",
+    "owner": "Owner",
+    "noVehiclesFound": "No vehicles found matching your search."
   }
 }

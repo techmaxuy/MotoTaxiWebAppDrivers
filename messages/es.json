@@ -201,6 +201,8 @@
     "manageUsers": "Gestionar Usuarios",
     "manageUsersDescription": "Ver, editar y gestionar todas las cuentas de usuario",
     "systemSettings": "Configuración del Sistema",
+    "manageVehicles": "Auditoría de Vehículos",
+    "manageVehiclesDescription": "Revisa, aprueba o rechaza los vehículos registrados por los conductores",
     "comingSoon": "Próximamente",
     "recentUsers": "Usuarios Recientes",
     "user": "Usuario",
@@ -585,6 +587,20 @@
     "upload_onlyImages": "Solo imágenes permitidas",
     "upload_maxSize5MB": "Máximo 5MB",
     "upload_error": "Error al subir",
-    "emptyVehiclesPrompt": "Comienza registrando tu primer vehículo para poder utilizar la plataforma."
+    "emptyVehiclesPrompt": "Comienza registrando tu primer vehículo para poder utilizar la plataforma.",
+    "all": "Todos",
+    "pending": "Pendientes",
+    "approved": "Aprobados",
+    "rejected": "Rechazados",
+    "searchPlaceholder": "Buscar por usuario o email...",
+    "reviewButton": "Revisar",
+    "reviewModalTitle": "Auditoría de Vehículo",
+    "rejectPlaceholder": "Esmere el motivo del rechazo aquí para que el conductor pueda corregirlo...",
+    "approveConfirm": "Aprobar",
+    "rejectConfirm": "Rechazar con Mensaje",
+    "reasonRequired": "Debes especificar un motivo para rechazar el registro.",
+    "close": "Cerrar",
+    "owner": "Propietario",
+    "noVehiclesFound": "No se encontraron vehículos que coincidan con la búsqueda."
   }
 }
