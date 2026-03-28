@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import { Link, useRouter } from '@/i18n/routing'
 import { Plus, Trash2, Edit, AlertCircle, Loader2 } from 'lucide-react'
 import { useTranslations } from 'next-intl'
@@ -76,11 +75,10 @@ export function VehicleList({ vehicles }: VehicleListProps) {
             {/* Imagen Principal (Frontal) */}
             <div className="relative aspect-video bg-gray-100 dark:bg-zinc-800">
               {vehicle.frontPhoto ? (
-                <Image 
+                <img 
                   src={vehicle.frontPhoto} 
                   alt={vehicle.model} 
-                  fill 
-                  className="object-cover"
+                  className="w-full h-full object-cover"
                 />
               ) : (
                 <div className="flex items-center justify-center h-full text-gray-400">Sin foto</div>

@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { Upload, X, Loader2, Check } from 'lucide-react'
-import Image from 'next/image'
 
 interface VehicleImageUploadProps {
   label: string
@@ -66,7 +65,7 @@ export function VehicleImageUpload({ label, value, onChange, onDelete, disabled,
       
       {value ? (
         <div className="relative w-full h-32 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700">
-          <Image src={value} alt={label} fill className="object-cover" />
+          <img src={value} alt={label} className="w-full h-full object-cover" />
           <button
             type="button"
             onClick={onDelete}
